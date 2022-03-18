@@ -1,0 +1,12 @@
+<h2>page.html</h2>
+
+<!-- https://jekyllrb.com/docs/static-files/ -->
+<!-- https://jekyllrb.com/docs/structure/ -->
+{% for file in site.static_files %}
+{% if file.path contains 'images/test' %}
+{{file.extname}}
+{% if file.extname == '.png' %}
+<img src="{{ site.baseurl }}{{ file.path }}" alt="image" />
+{% endif %}
+{% endif %}
+{% endfor %}
